@@ -1,0 +1,23 @@
+PKG="strace"
+PKG_ver="4.8"
+PKG_file="$PKG-$PKG_ver.tar.xz"
+URL="http://downloads.sourceforge.net/strace/$PKG_file"
+
+function do_unpack
+{
+	do_unpack_std
+}
+
+function do_compile
+{
+        ./configure     --host=arm-angstrom-linux-gnueabi
+
+        CC=arm-angstrom-linux-gnueabi-gcc make prefix=$install_dir/usr
+}
+
+function do_install
+{
+        CC=arm-angstrom-linux-gnueabi-gcc make install prefix=$install_dir/usr
+        cd ..
+}
+

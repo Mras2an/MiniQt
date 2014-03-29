@@ -1,0 +1,23 @@
+PKG="busybox"
+PKG_ver="1.21.1"
+PKG_file="$PKG-$PKG_ver.tar.bz2"
+URL="http://www.busybox.net/downloads/$PKG_file"
+
+function do_unpack
+{
+	do_unpack_std
+}
+
+function do_compile
+{
+	make ARCH=arm CROSS_COMPILE=$CROSS_COMPILE defconfig 
+        make CROSS_COMPILE=$CROSS_COMPILE
+
+}
+
+function do_install
+{
+	make CONFIG_PREFIX=$install_dir install
+	cd ..
+}
+

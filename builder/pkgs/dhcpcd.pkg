@@ -1,0 +1,24 @@
+PKG="dhcpcd"
+PKG_ver="5.6.2"
+PKG_file="$PKG-$PKG_ver.tar.bz2"
+URL="http://roy.marples.name/downloads/dhcpcd/$PKG_file"
+
+function do_unpack
+{
+	do_unpack_std
+}
+
+function do_compile
+{
+	./configure --prefix=$install_dir/usr		\
+		    --libdir=$install_dir/usr/lib	\
+		    --dbdir=$install_dir/var/db		\
+		    --host=$target
+	make
+}
+
+function do_install
+{
+	do_install_std
+}
+
