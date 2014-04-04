@@ -3,7 +3,7 @@
 function do_build
 {
         $builder busybox $install_dir
-        $builder strace $install_dir
+#        $builder strace $install_dir
         $builder dhcpcd $install_dir
 }
 
