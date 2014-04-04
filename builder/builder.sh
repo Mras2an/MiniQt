@@ -31,7 +31,7 @@ fi
 
 scripts_dir=$(cd $(dirname $0) && pwd)
 build=x86_64-unknown-linux-gnu
-target=arm-angstrom-linux-gnueabi
+target=$TARGET
 
 source $scripts_dir/pkgs/$1.pkg
 install_dir=$2

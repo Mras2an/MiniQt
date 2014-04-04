@@ -10,14 +10,14 @@ function do_unpack
 
 function do_compile
 {
-        ./configure     --host=arm-angstrom-linux-gnueabi
+        ./configure     --host=$TARGET
 
-        CC=arm-angstrom-linux-gnueabi-gcc make prefix=$install_dir/usr
+        CC=$TARGET-gcc make prefix=$install_dir/usr
 }
 
 function do_install
 {
-        CC=arm-angstrom-linux-gnueabi-gcc make install prefix=$install_dir/usr
+        CC=$TARGET-gcc make install prefix=$install_dir/usr
         cd ..
 }
 
