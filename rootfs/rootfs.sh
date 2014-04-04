@@ -21,7 +21,7 @@ then
 	exit 2
 fi
 
-target=arm-angstrom-linux-gnueabi
+target=$TARGET
 scripts_dir=$(cd $(dirname $0) && pwd)
 mkdir -p $1
 install_dir=$(cd $1; pwd)
